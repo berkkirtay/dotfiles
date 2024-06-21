@@ -29,7 +29,7 @@ echo -e "${RED}5. Following repository packages will be installed ==> ${pkglist_
 sudo pacman -S --needed - < $PKGLIST
 
 echo -e "${RED}6. Following AUR packages will be installed ==> ${aur_pkglist_number}"
-sudo mkdir -p aur_repositories
+mkdir -p aur_repositories
 cd aur_repositories
 cat "../$PKGLIST_AUR" | while read line || [[ -n $line ]];
 do
