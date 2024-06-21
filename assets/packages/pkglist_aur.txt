@@ -1,7 +1,7 @@
-mongodb-compass
-linux-wifi-hotspot
-mongosh-bin
-kopete
-mongodb-bin
 khotkeys
+kopete
+linux-wifi-hotspot
 linux-wifi-hotspot-debug
+mongodb-bin
+mongodb-compass
+mongosh-bin

@@ -34,7 +34,7 @@ cd aur_repositories
 cat "../$PKGLIST_AUR" | while read line || [[ -n $line ]];
 do
     package_name="https://aur.archlinux.org/${line}.git"
-    git clone $package_name && cd ./$line && makepkg -si && cd ..
+    git clone $package_name && cd "./$line" && makepkg -si && cd ..
 done
 cd ..
 echo -e "${RED}7. Default shell is changed to zsh."

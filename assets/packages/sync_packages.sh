@@ -44,8 +44,9 @@ function dump_to_file () {
   local output_file="$1"
   shift
   local list=("$@")
+  readarray -td '' sorted_list < <(printf '%s\0' "${list[@]}" | sort -z)
   echo -n > $output_file
-  for key in "${list[@]}"
+  for key in "${sorted_list[@]}" 
   do
       echo $key >> $output_file
   done
