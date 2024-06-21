@@ -26,7 +26,7 @@ pkglist_number=$(wc -l $PKGLIST)
 aur_pkglist_number=$(wc -l $PKGLIST_AUR)
 
 echo -e "${RED}5. Following repository packages will be installed ==> ${pkglist_number}"
-sudo pacman -S --needed - < $PKGLIST
+sudo pacman -S --noconfirm --needed - < $PKGLIST
 
 echo -e "${RED}6. Following AUR packages will be installed ==> ${aur_pkglist_number}"
 mkdir -p aur_repositories
