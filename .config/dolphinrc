@@ -1,0 +1,21 @@
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display,dolphin_directorysizemode.upd:convert-directorysizecount-to-directorysizemode
+
+[General]
+Version=202
+ViewPropsTimestamp=2024,1,6,19,34,52.302
+
+[IconsMode]
+PreviewSize=32
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[KPropertiesDialog]
+1920x1080 screen: Height=616
+1920x1080 screen: Width=479
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
