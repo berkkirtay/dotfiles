@@ -37,7 +37,10 @@ do
     git clone $package_name && cd "./$line" && makepkg -si && cd ..
 done
 cd ..
-echo -e "${RED}7. Default shell is changed to zsh."
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo -e "${RED}7. Default shell is changed to zsh and oh-my-zsh is installed."
 sudo chsh -s /usr/bin/zsh
 
 
