@@ -264,6 +264,8 @@ skanlite
 skanpage
 skladnik
 spectacle
+spotify-launcher
+steam
 step
 sudo
 svgpart

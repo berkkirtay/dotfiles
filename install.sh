@@ -1,54 +1,72 @@
 #!/bin/bash
 # Copyright (c) 2024 Berk Kirtay
 
-# Colors:
 RED='\033[0;31m'
-
-START_TIME=$(date +%s)
-
+YELLOW='\033[0;33m'
+NO_COLOR='\033[0m' 
+PROGRESS_BAR='####################'
 PACKAGE_SYNC_SCRIPT="./assets/packages/sync_packages.sh"
 PKGLIST="./assets/packages/pkglist.txt"
 PKGLIST_AUR="./assets/packages/pkglist_aur.txt"
+START_TIME=$(date +%s)
+progress_step=0
 
-echo -e "${RED}1. Install script is starting.. Start time ==> $START_TIME"
+function print_progress_info() {
+	sleep 1
+	((progress_step++))
+	local log="$1"
+	local step=$(($progress_step*2))
+	local remaining_step=$((20 - $step))
+	tput clear
+	echo -e "\r${YELLOW}[${PROGRESS_BAR:0:$step}$(printf "%${remaining_step}s")] %$((progress_step*10)) ${RED}$log${NO_COLOR}\n"
+}
 
-echo -e "${RED}2. Clearing the recent pacman cache."
+print_progress_info "Install script is starting."
+
+print_progress_info "Clearing the recent pacman cache."
 sudo paccache -rk3
 
+print_progress_info "System update is progressing."
 sudo pacman -Syu
-echo -e "${RED}3. System update is successful".
 
 sudo sh $PACKAGE_SYNC_SCRIPT
-echo -e "${RED}4. System repositories are successfully synchronized."
+print_progress_info "System repositories are successfully synchronized."
 
 # Install required packages from both repository and AUR:
 pkglist_number=$(wc -l $PKGLIST)
 aur_pkglist_number=$(wc -l $PKGLIST_AUR)
 
-echo -e "${RED}5. Following repository packages will be installed ==> ${pkglist_number}"
+print_progress_info "Following repository packages will be installed ==> ${pkglist_number}"
 sudo pacman -S --noconfirm --needed - < $PKGLIST
 
-echo -e "${RED}6. Following AUR packages will be installed ==> ${aur_pkglist_number}"
+print_progress_info "Following AUR packages will be installed ==> ${aur_pkglist_number}"
 mkdir -p aur_repositories
 cd aur_repositories
 cat "../$PKGLIST_AUR" | while read line || [[ -n $line ]];
 do
-    package_name="https://aur.archlinux.org/${line}.git"
-    git clone $package_name && cd "./$line" && makepkg -si && cd ..
+  package_name="https://aur.archlinux.org/${line}.git"
+	git clone $package_name 
+  cd $line 
+  sudo chmod a+rwx .    
+  makepkg -si --nocheck 
+  cd ..
 done
 cd ..
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-echo -e "${RED}7. Default shell is changed to zsh and oh-my-zsh is installed."
+print_progress_info "Default shell is changed to zsh and oh-my-zsh is installed."
 sudo chsh -s /usr/bin/zsh
 
-
-echo -e "${RED}8. Moving the system configs to the home directory."
+print_progress_info "Moving the system configs to the home directory."
 cd system 
 cp -Rp . ../
 cd ..
 
-echo -e "${RED}9. The script completed execution in $(date -d@$(($(date +%s) - START_TIME)) -u +%H\ hours\ %M\ min\ %S\ sec)"
+print_progress_info "Generating default locale settings."
+sudo echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
+sudo echo "LC_ALL=en_US.UTF-8" | sudo tee -a /etc/locale.conf
+sudo echo "LC_CTYPE=en_US.UTF-8" | sudo tee -a /etc/locale.conf
+sudo locale-gen
 
-
+print_progress_info "The script completed execution in $(date -d@$(($(date +%s) - START_TIME)) -u +%H\ hours\ %M\ min\ %S\ sec)."

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copyright (c) 2024 Berk Kirtay
 
-MULTICAST_ADDRESS="224.0.0.0"
+MULTICAST_ADDRESS="224.0.0.1"
 MULTICAST_PORT="9999"
 
 connected_interfaces=$(nmcli device status | grep -w 'connected' )
