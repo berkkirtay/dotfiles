@@ -1,7 +1,10 @@
-khotkeys
-kopete
+google-chrome
 linux-wifi-hotspot
 linux-wifi-hotspot-debug
 mongodb-bin
+mongodb-bin-debug
 mongodb-compass
 mongosh-bin
+mongosh-bin-debug
+p7zip
+postman-bin

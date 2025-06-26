@@ -1,3 +1,4 @@
+7zip
 akonadi-calendar-tools
 akonadiconsole
 akonadi-import-wizard
@@ -20,6 +21,7 @@ breeze-gtk
 breeze-plymouth
 cantor
 cervisia
+chromium
 code
 colord-kde
 devtools
@@ -35,9 +37,11 @@ drkonqi
 efibootmgr
 elisa
 falkon
+fastfetch
 ffmpegthumbs
 filelight
 firefox
+firewalld
 flatpak-kcm
 foot
 fzf
@@ -219,11 +223,15 @@ net-tools
 networkmanager
 nodejs
 npm
+ntfs-3g
+nvm
 okular
 openbsd-netcat
+openssl-1.1
 os-prober
 oxygen5
 oxygen-sounds
+p7zip
 pacman-contrib
 palapeli
 parley
@@ -250,10 +258,12 @@ plasma-workspace-wallpapers
 plymouth-kcm
 polkit-kde-agent
 powerdevil
+power-profiles-daemon
 poxml
 print-manager
 pulseaudio
 pulseaudio-bluetooth
+qbittorrent
 rocs
 rxvt-unicode
 sddm
@@ -273,6 +283,7 @@ sway
 swaybg
 sweeper
 systemsettings
+telegram-desktop
 telly-skout
 tokodon
 ttf-font-awesome
@@ -281,6 +292,7 @@ vi
 vim
 waybar
 xdg-desktop-portal-kde
+xf86-video-amdgpu
 xf86-video-vesa
 xmrig
 xorg-bdftopcf

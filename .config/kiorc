@@ -1,2 +1,3 @@
 [Confirmations]
-ConfirmEmptyTrash=true
+ConfirmDelete=false
+ConfirmEmptyTrash=false

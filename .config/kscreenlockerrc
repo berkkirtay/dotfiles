@@ -1,2 +1,9 @@
 [$Version]
 update_info=kscreenlocker.upd:0.1-autolock
+
+[Daemon]
+Timeout=10
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=/home/berk/Desktop/Misc/Wallpapers/windows-xp-bliss-4k-lu-1920x1080.jpg
+PreviewImage=/home/berk/Desktop/Misc/Wallpapers/windows-xp-bliss-4k-lu-1920x1080.jpg

@@ -128,6 +128,7 @@ Word Completion Remove Tail=true
 [filetree]
 editShade=31,81,106
 listMode=false
+middleClickToClose=false
 shadingEnabled=true
 showCloseButton=false
 showFullPathOnRoots=false

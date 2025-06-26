@@ -6,6 +6,9 @@ Id_1=821c8713-390e-41e6-83e7-2543006d0f4f
 Number=1
 Rows=1
 
+[NightColor]
+Mode=Constant
+
 [Tiling]
 padding=4
 
@@ -18,7 +21,13 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][213a9620-187e-58a6-b80b-85d8fb95dfce]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][2443d6bb-46b3-5736-849d-8be5fc6c4963]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][541ef9ad-af53-5b9c-92f3-78d743401024]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][5daf3656-3539-5b9a-b56e-7e5f8acb7bff]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][745f23e5-7711-5cc0-b7a5-71df0f3def3d]
@@ -27,9 +36,12 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][b018d4cf-4431-5b5a-a3de-4fc5fb986420]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][f62f3a50-64ad-535f-99b9-2358cba1d73a]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Xwayland]
 Scale=1
 
 [org.kde.kdecoration2]
 library=org.kde.kwin.aurorae
-theme=kwin4_decoration_qml_plastik
+theme=__aurorae__svg__MoeDark
